@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Web Speech API - TTS</title>
+</head>
+<body>
+  <h1>Text-to-Speech</h1>
+  <input id="text" type="text" value="Hello, World!">
+  <button id="speak">Speak</button>
+
+  <script>
+    const textInput = document.getElementById('text');
+    const speakButton = document.getElementById('speak');
+
+    speakButton.addEventListener('click', () => {
+      const text = textInput.value;
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'en-US';
+      utterance.rate = 1;
+      utterance.pitch = 1;
+      speechSynthesis.speak(utterance);
+    });
+  </script>
+</body>
+</html>
